@@ -1,4 +1,4 @@
-FILENAME = "satfile" 
+FILENAME = "satpar-X" 
 
 
 M = 4
@@ -773,6 +773,7 @@ def sat_par_R1(file):
 
 def sat_par_cross(file):
     # cross
+    sat_par_basic(file)
     for j in range(N - 3): 
         file.write(T12p(0, j + 2, 5))
     for j in range(N - 1): 
@@ -785,10 +786,11 @@ def sat_par_cross(file):
     file.write(T1p(1, 0, 0))
     
 
+
 svgfile = open(FILENAME + ".svg", "w") 
 prep_file(svgfile)
 
-sat_corona(svgfile) 
+sat_par_cross(svgfile) 
 
 svgfile.write("</svg>\n") 
 svgfile.close()
