@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="800" viewBox="0 0 15588 15588" >
+<defs>
+	<polygon id="hextile" stroke="black" stroke-width="30" points="500,0 1500,0 2000,866 1500,1732 500,1732 0,866" />
+
+	<mask id="m-c-arc-0" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-c-arc-1" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M1750 1299 Q1000 866, 1000 1732" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-c-arc-2" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-c-arc-3" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M250 1299 Q1000 866, 250 433" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-c-arc-4" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M250 433 Q1000 866, 1000 0" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-c-arc-5" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M1000 0 Q1000 866, 1750 433" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-cat-arc-0" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-cat-arc-1" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M1750 1299 Q1000 866, 250 1299" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-cat-arc-2" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M1000 1732 Q1000 866, 250 433" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-cat-arc-3" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M250 1299 Q1000 866, 1000 0" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-cat-arc-4" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M250 433 Q1000 866, 1750 433" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-cat-arc-5" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M1000 0 Q1000 866, 1750 1299" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-straight-arc-0" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M1000 0 L1000 1732" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-straight-arc-1" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M1750 433 L250 1299" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-straight-arc-2" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M1750 1299 L250 433" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-straight-arc-3" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M1000 1732 L1000 0" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-straight-arc-4" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M250 1299 L1750 433" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-straight-arc-5" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M250 433 L1750 1299" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-triple-arc-0" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M1000 0 Q250 866, 1000 1732" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-triple-arc-1" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M1750 433 Q750 433, 250 1299" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-triple-arc-2" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M1750 1299 Q1250 433, 250 433" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-triple-arc-3" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M1000 1732 Q1750 866, 1000 0" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-triple-arc-4" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M250 1299 Q1250 1299, 1750 433" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-triple-arc-5" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M250 433 Q750 1299, 1750 1299" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-double-cat-arc" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" fill="none" stroke-width="250" />
+		<path d="M250 1299 Q1000 866, 1000 0" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+	<mask id="m-double-triple-arc" maskUnits="userSpaceOnUse" >
+		<rect height="2000" width="1732" fill="white" />
+		<path d="M1000 0 Q250 866, 1000 1732" stroke="black" fill="none" stroke-width="250" />
+		<path d="M250 1299 Q1250 1299, 1750 433" stroke="black" fill="none" stroke-width="250" />
+	</mask>
+
+</defs>
+
+<use xlink:href="#hextile" transform="translate(2598, 2000) rotate(30, 1000, 866)" fill="none" fill-opacity="1.00" />
+<use xlink:href="#hextile" transform="translate(3464, 6500) rotate(30, 1000, 866)" fill="none" fill-opacity="1.00" />
+<use xlink:href="#hextile" transform="translate(4330, 2000) rotate(30, 1000, 866)" fill="none" fill-opacity="1.00" />
+<use xlink:href="#hextile" transform="translate(5196, 6500) rotate(30, 1000, 866)" fill="none" fill-opacity="1.00" />
+<use xlink:href="#hextile" transform="translate(6062, 2000) rotate(30, 1000, 866)" fill="none" fill-opacity="1.00" />
+<use xlink:href="#hextile" transform="translate(6928, 6500) rotate(30, 1000, 866)" fill="none" fill-opacity="1.00" />
+<use xlink:href="#hextile" transform="translate(7794, 2000) rotate(30, 1000, 866)" fill="none" fill-opacity="1.00" />
+<use xlink:href="#hextile" transform="translate(8660, 6500) rotate(30, 1000, 866)" fill="none" fill-opacity="1.00" />
+<use xlink:href="#hextile" transform="translate(1732, 3500) rotate(30, 1000, 866)" fill="none" fill-opacity="1.00" />
+<use xlink:href="#hextile" transform="translate(3464, 3500) rotate(30, 1000, 866)" fill="blue" fill-opacity="0.30" />
+<use xlink:href="#hextile" transform="translate(5196, 3500) rotate(30, 1000, 866)" fill="blue" fill-opacity="0.30" />
+<use xlink:href="#hextile" transform="translate(6928, 3500) rotate(30, 1000, 866)" fill="blue" fill-opacity="0.30" />
+<use xlink:href="#hextile" transform="translate(8660, 3500) rotate(30, 1000, 866)" fill="none" fill-opacity="1.00" />
+<use xlink:href="#hextile" transform="translate(2598, 5000) rotate(30, 1000, 866)" fill="none" fill-opacity="1.00" />
+<use xlink:href="#hextile" transform="translate(4330, 5000) rotate(30, 1000, 866)" fill="blue" fill-opacity="0.30" />
+<use xlink:href="#hextile" transform="translate(6062, 5000) rotate(30, 1000, 866)" fill="blue" fill-opacity="0.30" />
+<use xlink:href="#hextile" transform="translate(7794, 5000) rotate(30, 1000, 866)" fill="blue" fill-opacity="0.30" />
+<use xlink:href="#hextile" transform="translate(9526, 5000) rotate(30, 1000, 866)" fill="none" fill-opacity="1.00" />
+<g transform="translate(3464, 3500) rotate(210, 1000, 866)" >
+	<path d="M1000 0 Q250 866, 1000 1732" stroke="black" stroke-width="50" fill="none" mask="url(#m-triple-arc-4)" />
+	<path d="M1750 1299 Q1250 433, 250 433" stroke="black" stroke-width="50" fill="none" mask="url(#m-triple-arc-0)" />
+	<path d="M250 1299 Q1250 1299, 1750 433" stroke="black" stroke-width="50" fill="none" mask="url(#m-triple-arc-2)" />
+</g>
+
+<g transform="translate(5196, 3500) rotate(210, 1000, 866)" >
+	<path d="M1000 0 Q250 866, 1000 1732" stroke="black" stroke-width="50" fill="none" mask="url(#m-triple-arc-4)" />
+	<path d="M1750 1299 Q1250 433, 250 433" stroke="black" stroke-width="50" fill="none" mask="url(#m-triple-arc-0)" />
+	<path d="M250 1299 Q1250 1299, 1750 433" stroke="black" stroke-width="50" fill="none" mask="url(#m-triple-arc-2)" />
+</g>
+
+<g transform="translate(6928, 3500) rotate(210, 1000, 866)" >
+	<path d="M1000 0 Q250 866, 1000 1732" stroke="black" stroke-width="50" fill="none" mask="url(#m-triple-arc-4)" />
+	<path d="M1750 1299 Q1250 433, 250 433" stroke="black" stroke-width="50" fill="none" mask="url(#m-triple-arc-0)" />
+	<path d="M250 1299 Q1250 1299, 1750 433" stroke="black" stroke-width="50" fill="none" mask="url(#m-triple-arc-2)" />
+</g>
+
+<g transform="translate(4330, 5000) rotate(210, 1000, 866)" >
+	<path d="M1000 0 Q250 866, 1000 1732" stroke="black" stroke-width="50" fill="none" mask="url(#m-triple-arc-4)" />
+	<path d="M1750 1299 Q1250 433, 250 433" stroke="black" stroke-width="50" fill="none" mask="url(#m-triple-arc-0)" />
+	<path d="M250 1299 Q1250 1299, 1750 433" stroke="black" stroke-width="50" fill="none" mask="url(#m-triple-arc-2)" />
+</g>
+
+<g transform="translate(6062, 5000) rotate(210, 1000, 866)" >
+	<path d="M1000 0 Q250 866, 1000 1732" stroke="black" stroke-width="50" fill="none" mask="url(#m-triple-arc-4)" />
+	<path d="M1750 1299 Q1250 433, 250 433" stroke="black" stroke-width="50" fill="none" mask="url(#m-triple-arc-0)" />
+	<path d="M250 1299 Q1250 1299, 1750 433" stroke="black" stroke-width="50" fill="none" mask="url(#m-triple-arc-2)" />
+</g>
+
+<g transform="translate(7794, 5000) rotate(210, 1000, 866)" >
+	<path d="M1000 0 Q250 866, 1000 1732" stroke="black" stroke-width="50" fill="none" mask="url(#m-triple-arc-4)" />
+	<path d="M1750 1299 Q1250 433, 250 433" stroke="black" stroke-width="50" fill="none" mask="url(#m-triple-arc-0)" />
+	<path d="M250 1299 Q1250 1299, 1750 433" stroke="black" stroke-width="50" fill="none" mask="url(#m-triple-arc-2)" />
+</g>
+
+</svg>
