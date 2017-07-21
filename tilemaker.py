@@ -118,233 +118,68 @@ def make_tile(x, y, arcs, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
 def T1(x, y, phi = 6, stroke=STROKE, stroke_width = STROKEWIDTH): 
     arcs = [[C_ARC[0], None]]
     t1_str = make_tile(x, y, arcs, phi, stroke, stroke_width)    
-#    t1_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60) +\
-#                "\t<path d=\"" + C_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "</g>\n\n"
     return t1_str 
     
     
 def T2(x, y, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
     arcs = [[CAT_ARC[0], None]]
     t_str = make_tile(x, y, arcs, phi, stroke, stroke_width)    
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60) +\
-#                "\t<path d=\"" + CAT_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "</g>\n\n"
     return t_str
 
 def T3(x, y, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
     arcs = [[STRAIGHT_ARC[0], None]]
     t_str = make_tile(x, y, arcs, phi, stroke, stroke_width)    
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60) +\
-#                "\t<path d=\"" + STRAIGHT_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "</g>\n\n"
     return t_str
 
 def T4(x, y, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
     arcs = [[C_ARC[0], None], [C_ARC[0], None]]
     t_str = make_tile(x, y, arcs, phi, stroke, stroke_width)    
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60) +\
-#                "\t<path d=\"" + C_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "\t<path d=\"" + C_ARC[2] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "</g>\n\n"
     return t_str
 
 def T5(x, y, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
     arcs = [[C_ARC[0], None], [C_ARC[3], None]]
     t_str = make_tile(x, y, arcs, phi, stroke, stroke_width)    
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60) +\
-#                "\t<path d=\"" + C_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "\t<path d=\"" + C_ARC[3] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "</g>\n\n"
     return t_str
     
 def T6(x, y, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
     arcs = [[C_ARC[0], None], [STRAIGHT_ARC[0], None]]
     t_str = make_tile(x, y, arcs, phi, stroke, stroke_width)    
-
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60) +\
-#                "\t<path d=\"" + C_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "\t<path d=\"" + STRAIGHT_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "</g>\n\n"
     return t_str
 
 def T7(x, y, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
     arcs = [[C_ARC[0], None], [CAT_ARC[2], None]]
     t_str = make_tile(x, y, arcs, phi, stroke, stroke_width)    
-    
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60) +\
-#                "\t<path d=\"" + C_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "\t<path d=\"" + CAT_ARC[2] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "</g>\n\n"
     return t_str
 
 def T8(x, y, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
     arcs = [[CAT_ARC[0], None], [CAT_ARC[3], None]]
     t_str = make_tile(x, y, arcs, phi, stroke, stroke_width)    
-
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60) +\
-#                "\t<path d=\"" + CAT_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "\t<path d=\"" + CAT_ARC[3] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "</g>\n\n"
     return t_str
 
 def T9(x, y, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
     arcs = [[CAT_ARC[1], None], [STRAIGHT_ARC[0], "mCatArc1"]]
     t_str = make_tile(x, y, arcs, phi, stroke, stroke_width)    
-
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60) +\
-#                "\t<path d=\"" + CAT_ARC[1] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "\t<path d=\"" + STRAIGHT_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mCatArc1)\" "
-#    t_str += "/>\n" +\
-#                "</g>\n\n"
     return t_str 
 
 def T10(x, y, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):  
     arcs = [[STRAIGHT_ARC[1], None], [STRAIGHT_ARC[2], "mStraightArc1"]]
     t_str = make_tile(x, y, arcs, phi, stroke, stroke_width)
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60) +\
-#                "\t<path d=\"" + STRAIGHT_ARC[1] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "\t<path d=\"" + STRAIGHT_ARC[2] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#m-straight-arc-1)\" "
-#    t_str += "/>\n" +\
-#                "</g>\n\n"
     return t_str 
     
 def T11(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
     arcs = [[STRAIGHT_ARC[2], None], [STRAIGHT_ARC[1], "mStraightArc2"]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
         
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60) +\
-#                "\t<path d=\"" + STRAIGHT_ARC[2] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "\t<path d=\"" + STRAIGHT_ARC[1] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mStraightArc2)\" "
-#    t_str += "/>\n" +\
-#                "</g>\n\n"
     return t_str 
 
 def T12(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
     arcs = [[CAT_ARC[1], None], [CAT_ARC[2], "mCatArc1"]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
-    
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60) +\
-#                "\t<path d=\"" + CAT_ARC[1] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "\t<path d=\"" + CAT_ARC[2] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mCatArc1)\" "
-#    t_str += "/>\n" +\
-#                "</g>\n\n"
     return t_str 
 
 def T13(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):   
     arcs = [[CAT_ARC[2], None], [CAT_ARC[1], "mCatArc2"]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
-
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60) +\
-#                "\t<path d=\"" + CAT_ARC[2] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "\t<path d=\"" + CAT_ARC[1] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mCatArc2)\" "
-#    t_str += "/>\n" +\
-#                "</g>\n\n"
     return t_str 
 
 
@@ -352,179 +187,38 @@ def T13(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
 def T14(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
     arcs = [[C_ARC[0], None], [C_ARC[3], None], [STRAIGHT_ARC[0], None]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
-
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60) +\
-#                "\t<path d=\"" + C_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "\t<path d=\"" + C_ARC[3] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "\t<path d=\"" + STRAIGHT_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "</g>\n\n"
     return t_str
 
 def T15(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
     arcs = [[C_ARC[0], None], [C_ARC[2], None], [C_ARC[4], None]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
 
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60) +\
-#                "\t<path d=\"" + C_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "\t<path d=\"" + C_ARC[2] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "\t<path d=\"" + C_ARC[4] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n" +\
-#                "</g>\n\n"
     return t_str
 
 def T16(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
     arcs = [[CAT_ARC[1], None], [CAT_ARC[2], "mCatArc1"], [C_ARC[5], None]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
-#
-#    t_str = "<g id=\"tile-{}-{}\" ".format(kappa, theta)
-#    t_str += "transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60)
-#    t_str += "\t<path d=\"" + CAT_ARC[1] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n"
-#    t_str +=    "\t<path d=\"" + CAT_ARC[2] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mCatArc1)\" "
-#    t_str += "/>\n" +\
-#                "\t<path d=\"" + C_ARC[5] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n"
-#    t_str += "</g>\n\n"
     return t_str
 
 def T17(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
     arcs = [[CAT_ARC[2], None], [CAT_ARC[1], "mCatArc2"], [C_ARC[5], None]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
-#
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60)
-#    t_str += "\t<path d=\"" + CAT_ARC[2] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n"
-#    t_str +=    "\t<path d=\"" + CAT_ARC[1] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mCatArc2)\" "
-#    t_str += "/>\n" +\
-#                "\t<path d=\"" + C_ARC[5] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n"
-#    t_str += "</g>\n\n"
     return t_str 
     
 def T18(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
     arcs = [[CAT_ARC[0], None], [CAT_ARC[3], None], [STRAIGHT_ARC[5], "mDoubleCatArc"]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
-#
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60)
-#    t_str += "\t<path d=\"" + CAT_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n"
-#    t_str +=    "\t<path d=\"" + CAT_ARC[3] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "/>\n" +\
-#                "\t<path d=\"" + STRAIGHT_ARC[5] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mDoubleCatArc)\" "
-#    t_str += "/>\n"
-#    t_str += "</g>\n\n"
     return t_str
 
 def T19(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
     arcs = [[CAT_ARC[0], None], [CAT_ARC[3], "mStraightArc2"], [STRAIGHT_ARC[2], "mCatArc0"]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
-#
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60)
-#    t_str += "\t<path d=\"" + CAT_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" " +\
-#                "/>\n"
-#    t_str +=    "\t<path d=\"" + CAT_ARC[3] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mStraightArc2)\" "
-#    t_str += "/>\n" +\
-#                "\t<path d=\"" + STRAIGHT_ARC[2] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mCatArc0)\" "
-#    t_str += "/>\n"
-#    t_str += "</g>\n\n"
     return t_str
 
 def T20(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
     arcs = [[TRIPLE_ARC[0], "mTripleArc2"], [TRIPLE_ARC[2], "mTripleArc4"], 
             [TRIPLE_ARC[4], "mTripleArc0"]] 
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
-#
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60)
-#    t_str += "\t<path d=\"" + TRIPLE_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mTripleArc2)\" "
-#    t_str += "/>\n"
-#    t_str +=    "\t<path d=\"" + TRIPLE_ARC[2] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mTripleArc4)\" "
-#    t_str += "/>\n" +\
-#                "\t<path d=\"" + TRIPLE_ARC[4] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mTripleArc0)\" "
-#    t_str += "/>\n"
-#    t_str += "</g>\n\n"
     return t_str
 
 def T21(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
@@ -532,27 +226,6 @@ def T21(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
             [TRIPLE_ARC[2], "mTripleArc0"], 
             [TRIPLE_ARC[4], "mTripleArc2"]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60)
-#    t_str += "\t<path d=\"" + TRIPLE_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mTripleArc4)\" "
-#    t_str += "/>\n"
-#    t_str +=    "\t<path d=\"" + TRIPLE_ARC[2] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mTripleArc0)\" "
-#    t_str += "/>\n" +\
-#                "\t<path d=\"" + TRIPLE_ARC[4] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mTripleArc2)\" "
-#    t_str += "/>\n"
-#    t_str += "</g>\n\n"
     return t_str 
     
 def T22(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
@@ -560,28 +233,6 @@ def T22(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
             [TRIPLE_ARC[2], "mDoubleTripleArc"], 
             [TRIPLE_ARC[4], "mTripleArc0"]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
-#
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60)
-#    t_str += "\t<path d=\"" + TRIPLE_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    #t_str += "mask=\"url(#m-triple-arc-2)\" "
-#    t_str += "/>\n"
-#    t_str +=    "\t<path d=\"" + TRIPLE_ARC[2] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mDoubleTripleArc)\" "
-#    t_str += "/>\n" +\
-#                "\t<path d=\"" + TRIPLE_ARC[4] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mTripleArc0)\" "
-#    t_str += "/>\n"
-#    t_str += "</g>\n\n"
     return t_str 
     
 def T23(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
@@ -589,28 +240,6 @@ def T23(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
             [TRIPLE_ARC[2], "mDoubleTripleArc"], 
             [TRIPLE_ARC[4], None]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
-#
-#    t_str = "<g transform=\"translate({}, {}) ".format(*corona_coords(kappa, theta)) +\
-#                "rotate({}, 1000, 866)\" >\n".format(phi * 60)
-#    t_str += "\t<path d=\"" + TRIPLE_ARC[0] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mTripleArc4)\" "
-#    t_str += "/>\n"
-#    t_str +=    "\t<path d=\"" + TRIPLE_ARC[2] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    t_str += "mask=\"url(#mDoubleTripleArc)\" "
-#    t_str += "/>\n" +\
-#                "\t<path d=\"" + TRIPLE_ARC[4] + "\" " +\
-#                "stroke=\"{}\" ".format(STROKE) +\
-#                "stroke-width=\"{}\" ".format(STROKEWIDTH) +\
-#                "fill=\"none\" "
-#    #t_str += "mask=\"url(#m-double-triple-arc)\" "
-#    t_str += "/>\n"
-#    t_str += "</g>\n\n"
     return t_str
 
     
@@ -621,8 +250,6 @@ def draw_tile(file, x_pos = 0, y_pos = 0, stroke = "black", stroke_width = 30,
               stroke_color = "black", scale = 0.10, fill = "none", 
               fill_opacity = 1.0): 
     file.write("<use xlink:href=\"#hextile\" ")
-#    file.write("x=\"{}\" ".format(int(x_pos)))
-#    file.write("y=\"{}\" ".format(int(y_pos))) 
     file.write("stroke=\"{}\" ".format(stroke)) 
     file.write("stroke-width=\"{}\" ".format(int(stroke_width))) 
     file.write("stroke-color=\"{}\" ".format(stroke_color)) 
