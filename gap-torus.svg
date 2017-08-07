@@ -1,0 +1,709 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="800" viewBox="0 0 22516 22516" transform="rotate(30, 400, 400)" >
+
+<defs>
+	<polygon id="hextile" stroke="black" stroke-width="30" points="500,0 1500,0 2000,866 1500,1732 500,1732 0,866" />
+
+	<mask id="mCArc0" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M1750 433 Q1000 866, 1750 1299" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mCArc1" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M1750 1299 Q1000 866, 1000 1732" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mCArc2" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M1000 1732 Q1000 866, 250 1299" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mCArc3" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M250 1299 Q1000 866, 250 433" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mCArc4" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M250 433 Q1000 866, 1000 0" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mCArc5" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M1000 0 Q1000 866, 1750 433" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mCatArc0" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M1750 433 Q1000 866, 1000 1732" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mCatArc1" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M1750 1299 Q1000 866, 250 1299" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mCatArc2" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M1000 1732 Q1000 866, 250 433" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mCatArc3" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M250 1299 Q1000 866, 1000 0" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mCatArc4" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M250 433 Q1000 866, 1750 433" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mCatArc5" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M1000 0 Q1000 866, 1750 1299" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mStraightArc0" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M1000 0 L1000 1732" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mStraightArc1" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M1750 433 L250 1299" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mStraightArc2" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M1750 1299 L250 433" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mStraightArc3" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M1000 1732 L1000 0" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mStraightArc4" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M250 1299 L1750 433" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mStraightArc5" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M250 433 L1750 1299" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mTripleArc0" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M1000 0 Q250 866, 1000 1732" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mTripleArc1" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M1750 433 Q750 433, 250 1299" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mTripleArc2" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M1750 1299 Q1250 433, 250 433" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mTripleArc3" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M1000 1732 Q1750 866, 1000 0" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mTripleArc4" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M250 1299 Q1250 1299, 1750 433" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mTripleArc5" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M250 433 Q750 1299, 1750 1299" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mDoubleCatArc" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M1750 433 Q1000 866, 1000 1732" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		<path d="M250 1299 Q1000 866, 1000 0" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+	<mask id="mDoubleTripleArc" maskUnits="userSpaceOnUse" x="0" y="0" height="1732" width="2000" mask-type="luminance" >
+		<rect height="1732" width="2000" fill="#ffffff" fill-opacity="1.0" />
+		<path d="M1000 0 Q250 866, 1000 1732" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		<path d="M250 1299 Q1250 1299, 1750 433" stroke="#000000" stroke-opacity="1.0" fill="none" stroke-width="300" />
+		</mask>
+
+</defs>
+
+<use xlink:href="#hextile" x="12000" y="10000" fill="white"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.10" transform ="translate(12000, 8268)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.10" transform ="translate(13500, 9134)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.10" transform ="translate(13500, 10866)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.10" transform ="translate(12000, 11732)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.10" transform ="translate(10500, 10866)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.10" transform ="translate(10500, 9134)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.20" transform ="translate(12000, 6536)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.20" transform ="translate(13500, 7402)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.20" transform ="translate(15000, 8268)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.20" transform ="translate(15000, 10000)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.20" transform ="translate(15000, 11732)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.20" transform ="translate(13500, 12598)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.20" transform ="translate(12000, 13464)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.20" transform ="translate(10500, 12598)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.20" transform ="translate(9000, 11732)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.20" transform ="translate(9000, 10000)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.20" transform ="translate(9000, 8268)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.20" transform ="translate(10500, 7402)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.30" transform ="translate(12000, 4804)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.30" transform ="translate(13500, 5670)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.30" transform ="translate(15000, 6536)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.30" transform ="translate(16500, 7402)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.30" transform ="translate(16500, 9134)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.30" transform ="translate(16500, 10866)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.30" transform ="translate(16500, 12598)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.30" transform ="translate(15000, 13464)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.30" transform ="translate(13500, 14330)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.30" transform ="translate(12000, 15196)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.30" transform ="translate(10500, 14330)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.30" transform ="translate(9000, 13464)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.30" transform ="translate(7500, 12598)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.30" transform ="translate(7500, 10866)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.30" transform ="translate(7500, 9134)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.30" transform ="translate(7500, 7402)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.30" transform ="translate(9000, 6536)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.30" transform ="translate(10500, 5670)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(12000, 3072)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(13500, 3938)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(15000, 4804)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(16500, 5670)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(18000, 6536)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(18000, 8268)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(18000, 10000)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(18000, 11732)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(18000, 13464)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(16500, 14330)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(15000, 15196)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(13500, 16062)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(12000, 16928)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(10500, 16062)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(9000, 15196)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(7500, 14330)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(6000, 13464)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(6000, 11732)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(6000, 10000)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(6000, 8268)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(6000, 6536)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(7500, 5670)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(9000, 4804)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.40" transform ="translate(10500, 3938)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(12000, 1340)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(13500, 2206)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(15000, 3072)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(16500, 3938)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(18000, 4804)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(19500, 5670)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(19500, 7402)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(19500, 9134)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(19500, 10866)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(19500, 12598)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(19500, 14330)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(18000, 15196)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(16500, 16062)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(15000, 16928)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(13500, 17794)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(12000, 18660)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(10500, 17794)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(9000, 16928)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(7500, 16062)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(6000, 15196)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(4500, 14330)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(4500, 12598)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(4500, 10866)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(4500, 9134)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(4500, 7402)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(4500, 5670)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(6000, 4804)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(7500, 3938)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(9000, 3072)"  />
+<use xlink:href="#hextile" stroke="black" stroke-width="30" stroke-color="black" fill="none" fill-opacity="0.50" transform ="translate(10500, 2206)"  />
+<g id="tileK-5T0" transform="translate(4500, 14330) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-5T1" transform="translate(4500, 12598) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-4T0" transform="translate(6000, 13464) rotate(180, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK-3T0" transform="translate(7500, 12598) rotate(-120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK5T-5" transform="translate(19500, 14330) rotate(-120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK4T-5" transform="translate(18000, 15196) rotate(-120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK4T-4" transform="translate(18000, 13464) rotate(60, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK3T-3" transform="translate(16500, 12598) rotate(-240, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-5T5" transform="translate(4500, 5670) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-4T5" transform="translate(6000, 4804) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-4T4" transform="translate(6000, 6536) rotate(-60, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK0T-5" transform="translate(12000, 18660) rotate(-120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-1T-4" transform="translate(10500, 17794) rotate(-120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK0T-4" transform="translate(12000, 16928) rotate(-180, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK5T0" transform="translate(19500, 5670) rotate(-240, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK5T-1" transform="translate(19500, 7402) rotate(-240, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK4T0" transform="translate(18000, 6536) rotate(-300, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK-2T5" transform="translate(9000, 3072) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-2T4" transform="translate(9000, 4804) rotate(-60, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK-1T3" transform="translate(10500, 5670) rotate(240, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-3T5" transform="translate(7500, 3938) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-3T4" transform="translate(7500, 5670) rotate(-60, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK-2T3" transform="translate(9000, 6536) rotate(240, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK4T1" transform="translate(18000, 4804) rotate(120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK3T1" transform="translate(16500, 5670) rotate(180, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK3T0" transform="translate(16500, 7402) rotate(240, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-5T2" transform="translate(4500, 10866) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-4T1" transform="translate(6000, 11732) rotate(60, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK-3T1" transform="translate(7500, 10866) rotate(120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK1T-5" transform="translate(13500, 17794) rotate(-120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK1T-4" transform="translate(13500, 16062) rotate(-60, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK0T-3" transform="translate(12000, 15196) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-4T-1" transform="translate(6000, 15196) rotate(-120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-3T-1" transform="translate(7500, 14330) rotate(-180, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK-3T0" transform="translate(7500, 12598) rotate(120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK5T-4" transform="translate(19500, 12598) rotate(-240, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK4T-3" transform="translate(18000, 11732) rotate(-300, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK3T-3" transform="translate(16500, 12598) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-5T3" transform="translate(4500, 9134) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-4T2" transform="translate(6000, 10000) rotate(60, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK-3T2" transform="translate(7500, 9134) rotate(120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK2T-5" transform="translate(15000, 16928) rotate(-120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK2T-4" transform="translate(15000, 15196) rotate(-60, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK1T-3" transform="translate(13500, 14330) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-3T-2" transform="translate(7500, 16062) rotate(-120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-2T-2" transform="translate(9000, 15196) rotate(-180, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK-2T-1" transform="translate(9000, 13464) rotate(120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK5T-3" transform="translate(19500, 10866) rotate(-240, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK4T-2" transform="translate(18000, 10000) rotate(-300, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK3T-2" transform="translate(16500, 10866) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-5T4" transform="translate(4500, 7402) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-4T3" transform="translate(6000, 8268) rotate(60, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK-3T3" transform="translate(7500, 7402) rotate(120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK3T-5" transform="translate(16500, 16062) rotate(-120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK3T-4" transform="translate(16500, 14330) rotate(-60, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK2T-3" transform="translate(15000, 13464) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-2T-3" transform="translate(9000, 16928) rotate(-120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-1T-3" transform="translate(10500, 16062) rotate(-180, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK-1T-2" transform="translate(10500, 14330) rotate(120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK5T-2" transform="translate(19500, 9134) rotate(-240, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK4T-1" transform="translate(18000, 8268) rotate(-300, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK3T-1" transform="translate(16500, 9134) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-3T0" transform="translate(7500, 12598) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-3T1" transform="translate(7500, 10866) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-2T0" transform="translate(9000, 11732) rotate(180, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK-1T0" transform="translate(10500, 10866) rotate(-120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK3T-3" transform="translate(16500, 12598) rotate(-120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK2T-3" transform="translate(15000, 13464) rotate(-120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK2T-2" transform="translate(15000, 11732) rotate(60, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK1T-1" transform="translate(13500, 10866) rotate(-240, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-3T3" transform="translate(7500, 7402) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-2T3" transform="translate(9000, 6536) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-2T2" transform="translate(9000, 8268) rotate(-60, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK0T-3" transform="translate(12000, 15196) rotate(-120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-1T-2" transform="translate(10500, 14330) rotate(-120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK0T-2" transform="translate(12000, 13464) rotate(-180, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK3T0" transform="translate(16500, 7402) rotate(-240, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK3T-1" transform="translate(16500, 9134) rotate(-240, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK2T0" transform="translate(15000, 8268) rotate(-300, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK-1T3" transform="translate(10500, 5670) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-1T2" transform="translate(10500, 7402) rotate(-60, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK0T1" transform="translate(12000, 8268) rotate(240, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-2T-1" transform="translate(9000, 13464) rotate(-120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-1T-1" transform="translate(10500, 12598) rotate(-180, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK-1T0" transform="translate(10500, 10866) rotate(120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK3T-2" transform="translate(16500, 10866) rotate(-240, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK2T-1" transform="translate(15000, 10000) rotate(-300, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK1T-1" transform="translate(13500, 10866) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-3T2" transform="translate(7500, 9134) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK-2T1" transform="translate(9000, 10000) rotate(60, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK-1T1" transform="translate(10500, 9134) rotate(120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK1T-3" transform="translate(13500, 14330) rotate(-120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK1T-2" transform="translate(13500, 12598) rotate(-60, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK0T-1" transform="translate(12000, 11732) rotate(0, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK2T1" transform="translate(15000, 6536) rotate(120, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+<g id="tileK1T1" transform="translate(13500, 7402) rotate(180, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1000 1732" stroke="black" stroke-width="100" fill="none" />
+	<path d="M250 1299 Q1000 866, 1000 0" stroke="black" stroke-width="100" fill="none" mask="url(#mStraightArc2)" />
+	<path d="M1750 1299 L250 433" stroke="black" stroke-width="100" fill="none" mask="url(#mCatArc0)" />
+</g>
+
+<g id="tileK1T0" transform="translate(13500, 9134) rotate(240, 1000, 866)" >
+	<path d="M1750 433 Q1000 866, 1750 1299" stroke="black" stroke-width="100" fill="none" />
+	<path d="M1000 1732 Q1000 866, 250 1299" stroke="black" stroke-width="100" fill="none" />
+</g>
+
+</svg>

@@ -1,4 +1,4 @@
-FILENAME = "torus" 
+FILENAME = "gap-torus" 
 
 M = 4
 N = 5 
@@ -1190,22 +1190,22 @@ def draw_X_over(x, y, rotation = None):
 
     
 def draw_torus(file, corona = CORONA, loop = None): 
-    file.write(draw_A_cluster(-corona, corona)) 
-    file.write(draw_A_cluster(0, -corona))
-    file.write(draw_A_cluster(corona, 0))
+    file.write(draw_B_cluster(-corona, corona)) 
+    file.write(draw_B_cluster(0, -corona))
+    file.write(draw_B_cluster(corona, 0))
     
-    file.write(draw_B_cluster(0, corona))
-    file.write(draw_B_cluster(-corona, 0)) 
-    file.write(draw_B_cluster(corona, -corona)) 
+    file.write(draw_A_cluster(0, corona))
+    file.write(draw_A_cluster(-corona, 0)) 
+    file.write(draw_A_cluster(corona, -corona)) 
     
     for i in range(corona - 2): 
-        file.write(draw_C_cluster(-i - 1, corona))
-        file.write(draw_C_cluster(-corona + i + 1, 0 - i - 1))
-        file.write(draw_C_cluster(corona, -i - 2))
+        file.write(draw_D_cluster(-i - 1, corona))
+        file.write(draw_D_cluster(-corona + i + 1, 0 - i - 1))
+        file.write(draw_D_cluster(corona, -i - 2))
         
-        file.write(draw_D_cluster(corona - 1 - i, i + 1))
-        file.write(draw_D_cluster(-corona, i + 2)) 
-        file.write(draw_D_cluster(i + 1, -corona))
+        file.write(draw_C_cluster(corona - 1 - i, i + 1))
+        file.write(draw_C_cluster(-corona, i + 2)) 
+        file.write(draw_C_cluster(i + 1, -corona))
 
 #    file.write(draw_A_cluster(-CORONA, CORONA, sub = 1))
 #    file.write(draw_B_cluster(0, CORONA, sub = 2))
@@ -1217,8 +1217,14 @@ def draw_simple_torus(file, corona = CORONA):
     blank_corona(file)
     draw_torus(file, CORONA)
 
-
 def draw_nested_torii(file, corona = CORONA): 
+    prep_file(file) 
+    blank_corona(file) 
+    draw_torus(file, corona) 
+    draw_torus(file, corona - 2) 
+    
+
+def draw_looped_torii(file, corona = CORONA): 
     prep_file(file) 
     blank_corona(file) 
 #    draw_torus(file, corona) 
@@ -1227,7 +1233,7 @@ def draw_nested_torii(file, corona = CORONA):
     draw_inner_looped_torus(file, corona)
     
 def draw_outer_looped_torus(file, corona = CORONA, loop = 0): 
-    file.write(draw_X_over(0, corona)) 
+#    file.write(draw_X_over(0, corona)) 
     file.write(draw_A_cluster(-corona, 0)) 
     file.write(draw_A_cluster(corona, -corona)) 
     
@@ -1279,7 +1285,7 @@ M = 8
 N = 10
 #stretched_hexagon(svgfile, M, N)
 
-draw_nested_torii(svgfile)
+draw_looped_torii(svgfile)
 
 svgfile.write("</svg>\n") 
 svgfile.close()
