@@ -1179,7 +1179,11 @@ def draw_X_over(x, y, rotation = None):
                  y + (2 * tx[1]) + (3 * ty[1]), 1 - rot)
     t_str += T23(x + (3 * tx[0]) + (3 * ty[0]), 
                  y + (3 * tx[1]) + (3 * ty[1]), 3 - rot)
-    
+    t_str += T4(x + (2 * tx[0]) + (4 * ty[0]), 
+                y + (2 * tx[1]) + (4 * ty[1]), 4 - rot)
+    t_str += T4(x + (4 * tx[0]) + (4 * ty[0]), 
+                y + (4 * tx[1]) + (4 * ty[1]), 4 - rot)    
+    print("crap")
     return t_str
     
     
@@ -1220,6 +1224,7 @@ def draw_nested_torii(file, corona = CORONA):
 #    draw_torus(file, corona) 
 #    draw_torus(file, corona - 2) 
     draw_outer_looped_torus(file, corona)
+    draw_inner_looped_torus(file, corona)
     
 def draw_outer_looped_torus(file, corona = CORONA, loop = 0): 
     file.write(draw_X_over(0, corona)) 
@@ -1229,6 +1234,33 @@ def draw_outer_looped_torus(file, corona = CORONA, loop = 0):
     file.write(draw_B_cluster(-corona, corona)) 
     file.write(draw_B_cluster(0, -corona)) 
     file.write(draw_B_cluster(corona, 0)) 
+    
+    for i in range(corona - 3): 
+        file.write(draw_D_cluster(-2 - i, corona))
+        
+    for i in range(corona - 4): 
+        file.write(draw_C_cluster(corona - i - 1, i + 1))
+        
+    for i in range(corona - 2): 
+        file.write(draw_C_cluster(-corona, i + 2))
+        file.write(draw_C_cluster(i + 1, -corona)) 
+        file.write(draw_D_cluster(-corona + i + 1, -i - 1)) 
+        file.write(draw_D_cluster(corona, -corona + i + 1)) 
+        
+def draw_inner_looped_torus(file, corona = CORONA, loop = 0): 
+    k = corona - 2    
+    file.write(draw_A_cluster(-k, 0)) 
+    file.write(draw_A_cluster(k, -k))
+    file.write(draw_B_cluster(-k, k)) 
+    file.write(draw_B_cluster(0, -k)) 
+    file.write(draw_B_cluster(k, 0)) 
+    for i in range(k - 2): 
+        file.write(draw_D_cluster(-i - 1, k)) 
+        file.write(draw_D_cluster(-k + i + 1, -i - 1)) 
+        file.write(draw_D_cluster(k, -k + i + 1))
+        file.write(draw_C_cluster(-k, k - 1 - i)) 
+        file.write(draw_C_cluster(i + 1, -k)) 
+        file.write(draw_C_cluster(k - i - 1, i + 1))
     
     
 
