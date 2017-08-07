@@ -1,9 +1,9 @@
-FILENAME = "gap-torus" 
+FILENAME = "Xover" 
 
 M = 4
 N = 5 
 
-CORONA = 5
+CORONA = 4
 
 ROTATE = 30
 
@@ -1275,8 +1275,19 @@ def draw_loop(file, corona = CORONA, loops = 2):
     prep_file(file) 
     blank_corona(file) 
     draw_outer_looped_torus(file)
-    
-    
+
+def draw_torus_Xover(file): 
+    prep_file(file)
+    file.write(draw_X_over(0, 1))
+    for i in range(2): 
+        draw_tile(file, *cor_axis_coords(-1 + i, 1))
+    for i in range(3): 
+        draw_tile(file, *cor_axis_coords(-1 + i, 0))
+        draw_tile(file, *cor_axis_coords(i, -1))        
+    for i in range(4): 
+        draw_tile(file, *cor_axis_coords(i, -2))
+    for i in range(5): 
+        draw_tile(file, *cor_axis_coords(i, -3))
     
 svgfile = open(FILENAME + ".svg", "w") 
 
@@ -1285,7 +1296,7 @@ M = 8
 N = 10
 #stretched_hexagon(svgfile, M, N)
 
-draw_looped_torii(svgfile)
+draw_torus_Xover(svgfile)
 
 svgfile.write("</svg>\n") 
 svgfile.close()
