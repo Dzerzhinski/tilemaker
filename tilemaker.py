@@ -1,12 +1,14 @@
-FILENAME = "Xover" 
+FILENAME = "shaded-k6torus" 
 
 M = 4
 N = 5 
 
-CORONA = 4
+CORONA = 6
 
 ROTATE = 30
 
+SHADE_LIST = [("yellow", 0.5), ("red", 0.25), 
+              ("green", 0.25), ("navy", 0.25)]
 
 dX = 2000 
 X_OFFSET = 1000
@@ -31,8 +33,127 @@ STROKE = "black"
 
 CON_PT = [(1000, 0), (1750, 433), (1750, 1299), (1000, 1732), 
               (250, 1299), (250, 433)]
+              
+CON_VECT = [(0, -1), (0.866, -0.5), (0.866, 0.5), (0, 1), (-0.866, 0.5), (-0.866, -0.5)] 
+
+
+             
 VERTEX = [(1500 - 250, 0 + 433), (2000 - 250, 866), (1500 - 250, 1732 - 433), (500 + 250, 1732 - 433), 
               (0 + 250, 866), (500 + 250, 0 + 433)]
+              
+REAL_VERT = [(1500, 0), (2000, 866), (1500, 1732), (500, 1732), (0, 866), 
+             (500, 0)] 
+VERT_VECT = [(0.5, -0.866), (1, 0), (0.5, 0.866), (-0.5, 0.866), (-1, 0), (-0.5, -0.866)]
+
+def trans_coord_str(x, y, dx, dy, scale = STROKEWIDTH): 
+    return "{} {}".format(int(x + dx * 2.5 * scale), int(y + dy * 2.5 * scale))
+    
+def clip_path_catarc(i, normal): 
+    p_str = "M"    
+    if(normal > 0): 
+        p_str += trans_coord_str(*CON_PT[(i + 1) % 6], *CON_VECT[(i + 2) % 6])
+        p_str += " Q" 
+        p_str += trans_coord_str(1000, 866, *CON_VECT[(i + 2) % 6]) 
+        p_str += " "
+        p_str += trans_coord_str(*CON_PT[(i + 3) % 6], *CON_VECT[(i + 2) % 6])
+        p_str += " "
+        for j in range(2): 
+            p_str += "L"
+            p_str += trans_coord_str(*REAL_VERT[(i + 2 - j) % 6], 0, 0)
+            p_str += " "
+    elif(normal < 0): 
+        p_str += trans_coord_str(*CON_PT[(i + 1) % 6], *CON_VECT[(i + 5) % 6])
+        p_str += " Q" 
+        p_str += trans_coord_str(1000, 866, *CON_VECT[(i + 5) % 6]) 
+        p_str += " "
+        p_str += trans_coord_str(*CON_PT[(i + 3) % 6], *CON_VECT[(i + 5) % 6])
+        p_str += " "
+        for j in range(4): 
+            p_str += "L"
+            p_str += trans_coord_str(*REAL_VERT[(i + 3 + j) % 6], 0, 0)
+            p_str += " "
+    p_str += "Z"
+    
+    return p_str
+    
+        
+def clip_path_straight(i, normal): 
+    c_str = "M" 
+    if(normal > 0): 
+        c_str += trans_coord_str(*CON_PT[(i)], *VERT_VECT[(i + 1) % 6])
+        c_str += " L" 
+        c_str += trans_coord_str(*CON_PT[(i + 3) % 6], *VERT_VECT[(i + 1) % 6]) 
+        for j in range(3):         
+            c_str += " L"
+            c_str += trans_coord_str(*REAL_VERT[(i + 2 - j) % 6], 0, 0) 
+    if(normal < 0): 
+        c_str += trans_coord_str(*CON_PT[(i)], *VERT_VECT[(i + 4) % 6])
+        c_str += " L" 
+        c_str += trans_coord_str(*CON_PT[(i + 3) % 6], *VERT_VECT[(i + 4) % 6]) 
+        for j in range(3):         
+            c_str += " L"
+            c_str += trans_coord_str(*REAL_VERT[(i + 3 + j) % 6], 0, 0) 
+    c_str += " Z" 
+    return c_str 
+    
+def clip_path_triple(i, normal): 
+    p_str = "M" 
+    if(normal > 0): 
+        p_str += trans_coord_str(*CON_PT[i], *VERT_VECT[(i + 1) % 6]) 
+        p_str += " Q" 
+        p_str += trans_coord_str(*VERTEX[(i - 2) % 6], *VERT_VECT[(i + 1) % 6])
+        p_str += " "
+        p_str += trans_coord_str(*CON_PT[(i + 3) % 6], *VERT_VECT[(i + 1) % 6])
+        for j in range(3): 
+            p_str += " L"
+            p_str += trans_coord_str(*REAL_VERT[(i + 2 - j) % 6], 0, 0)
+    if(normal < 0): 
+        p_str += trans_coord_str(*CON_PT[i], *VERT_VECT[(i + 4) % 6]) 
+        p_str += " Q" 
+        p_str += trans_coord_str(*VERTEX[(i - 2) % 6], *VERT_VECT[(i + 4) % 6])
+        p_str += " "
+        p_str += trans_coord_str(*CON_PT[(i + 3) % 6], *VERT_VECT[(i + 4) % 6])
+        for j in range(3): 
+            p_str += " L"
+            p_str += trans_coord_str(*REAL_VERT[(i + 3 + j) % 6], 0, 0)
+    p_str += " Z"
+    return p_str
+        
+        
+def clip_dfn(paths, clip_id): 
+    c_str = "\t<clipPath id=\"{}\" ".format(clip_id) 
+    c_str += "clipPathUnits=\"userSpaceOnUse\" "
+    c_str += "clip-rule=\"evenodd\" " 
+    c_str += ">\n"
+    for p in paths: 
+        c_str += "\t\t<path d=\"{}\" />\n".format(p)
+    c_str += "\t</clipPath>\n\n"
+    return c_str 
+    
+def write_clip_dfns(file): 
+    for c in range(len(CAT_ARC)): 
+        file.write(clip_dfn([clip_path_catarc(c, 1), 
+                             clip_path_catarc(c, -1)], 
+                             "clipCatArc{}".format(c)))
+    for c in range(len(STRAIGHT_ARC)): 
+        file.write(clip_dfn([clip_path_straight(c, 1), 
+                             clip_path_straight(c, -1)], 
+                             "clipStraightArc{}".format(c)))
+    for c in range(len(TRIPLE_ARC)): 
+        file.write(clip_dfn([clip_path_triple(c, 1), 
+                             clip_path_triple(c, -1)], 
+                             "clipTripleArc{}".format(c)))
+    file.write(clip_dfn([clip_path_catarc(0, 1), 
+                         clip_path_catarc(0, -1), 
+                         clip_path_catarc(3, 1), 
+                            clip_path_catarc(3, -1)], 
+                            "clipDoubleCatArc"))
+    file.write(clip_dfn([clip_path_triple(0, 1), 
+                         clip_path_triple(0, -1), 
+                            clip_path_triple(4, 1), 
+                            clip_path_triple(4, -1)], 
+                            "ClipDoubleTripleArc"))
+
 
 def coord_str(pt): 
     return "{} {}".format(CON_PT[pt][0], CON_PT[pt][1])
@@ -45,7 +166,8 @@ C_ARC = ["M" + coord_str((i + 1) % 6) + " Q1000 866, " +\
             
 
 CAT_ARC = ["M" + coord_str((i + 1) % 6) + " Q1000 866, " +\
-            coord_str((i + 3) % 6) for i in range(6)]
+            coord_str((i + 3) % 6) for i in range(6)] 
+            
 
 STRAIGHT_ARC = ["M" + coord_str((i) % 6) + " L" +\
                 coord_str((i + 3) % 6) for i in range(6)] 
@@ -108,6 +230,9 @@ def make_tile(x, y, arcs, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
         t_str += "stroke=\"{}\" ".format(stroke) 
         t_str += "stroke-width=\"{}\" ".format(stroke_width) 
         t_str += "fill=\"none\" "
+        if(len(a) > 2): 
+            t_str += "clip-path=\"url(#{})\" ".format(a[2])
+            t_str += "stroke-linecap=\"round\" "
         if(a[1] is not None): 
             t_str += "mask=\"url(#{})\" ".format(a[1])
         t_str += "/>\n" 
@@ -123,6 +248,9 @@ def make_tile_stretched(x, y, arcs, phi = 6, stroke=STROKE, stroke_width = STROK
         t_str += "stroke=\"{}\" ".format(stroke) 
         t_str += "stroke-width=\"{}\" ".format(stroke_width) 
         t_str += "fill=\"none\" "
+        if(len(a) > 2): 
+            t_str += "clip-path=\"url(#{})\" ".format(a[2])
+            t_str += "stroke-linecap=\"round\" "
         if(a[1] is not None): 
             t_str += "mask=\"url(#{})\" ".format(a[1])
         t_str += "/>\n" 
@@ -172,28 +300,29 @@ def T8(x, y, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
     return t_str
 
 def T9(x, y, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
-    arcs = [[CAT_ARC[1], None], [STRAIGHT_ARC[0], "mCatArc1"]]
+#    arcs = [[CAT_ARC[1], None], [STRAIGHT_ARC[0], "mCatArc1"]]
+    arcs = [[CAT_ARC[1], None], [STRAIGHT_ARC[0], None, "clipCatArc1"]]
     t_str = make_tile(x, y, arcs, phi, stroke, stroke_width)    
     return t_str 
 
 def T10(x, y, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):  
-    arcs = [[STRAIGHT_ARC[1], None], [STRAIGHT_ARC[2], "mStraightArc1"]]
+    arcs = [[STRAIGHT_ARC[1], None], [STRAIGHT_ARC[2], None, "clipStraightArc1"]]
     t_str = make_tile(x, y, arcs, phi, stroke, stroke_width)
     return t_str 
     
 def T11(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
-    arcs = [[STRAIGHT_ARC[2], None], [STRAIGHT_ARC[1], "mStraightArc2"]]
+    arcs = [[STRAIGHT_ARC[2], None], [STRAIGHT_ARC[1], None, "clipStraightArc2"]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
         
     return t_str 
 
 def T12(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
-    arcs = [[CAT_ARC[1], None], [CAT_ARC[2], "mCatArc1"]]
+    arcs = [[CAT_ARC[1], None], [CAT_ARC[2], None, "clipCatArc1"]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
     return t_str 
 
 def T13(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):   
-    arcs = [[CAT_ARC[2], None], [CAT_ARC[1], "mCatArc2"]]
+    arcs = [[CAT_ARC[2], None], [CAT_ARC[1], None, "clipCatArc2"]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
     return t_str 
 
@@ -211,48 +340,53 @@ def T15(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
     return t_str
 
 def T16(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
-    arcs = [[CAT_ARC[1], None], [CAT_ARC[2], "mCatArc1"], [C_ARC[5], None]]
+    arcs = [[CAT_ARC[1], None], [CAT_ARC[2], None, "clipCatArc1"], [C_ARC[5], None]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
     return t_str
 
 def T17(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
-    arcs = [[CAT_ARC[2], None], [CAT_ARC[1], "mCatArc2"], [C_ARC[5], None]]
+    arcs = [[CAT_ARC[2], None], [CAT_ARC[1], None, "clipCatArc2"], [C_ARC[5], None]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
     return t_str 
     
 def T18(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH): 
-    arcs = [[CAT_ARC[0], None], [CAT_ARC[3], None], [STRAIGHT_ARC[5], "mDoubleCatArc"]]
+    arcs = [[CAT_ARC[0], None], 
+            [CAT_ARC[3], None], 
+            [STRAIGHT_ARC[5], None, "clipDoubleCatArc"]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
     return t_str
 
 def T19(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
-    arcs = [[CAT_ARC[0], None], [CAT_ARC[3], "mStraightArc2"], [STRAIGHT_ARC[2], "mCatArc0"]]
+    arcs = [[CAT_ARC[0], None], 
+            [CAT_ARC[3], None, "clipStraightArc2"], 
+            [STRAIGHT_ARC[2], None, "clipCatArc0"]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
     return t_str
 
 def T20(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
-    arcs = [[TRIPLE_ARC[0], "mTripleArc2"], [TRIPLE_ARC[2], "mTripleArc4"], 
-            [TRIPLE_ARC[4], "mTripleArc0"]] 
+    arcs = [[TRIPLE_ARC[0], None, "clipTripleArc2"], 
+            [TRIPLE_ARC[2], None, "clipTripleArc4"], 
+            [TRIPLE_ARC[4], None, "clipTripleArc0"]] 
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
     return t_str
 
 def T21(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
-    arcs = [[TRIPLE_ARC[0], "mTripleArc4"], 
-            [TRIPLE_ARC[2], "mTripleArc0"], 
-            [TRIPLE_ARC[4], "mTripleArc2"]]
+    arcs = [[TRIPLE_ARC[0], None, "clipTripleArc4"], 
+            [TRIPLE_ARC[2], None, "clipTripleArc0"], 
+            [TRIPLE_ARC[4], None, "clipTripleArc2"]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
     return t_str 
     
 def T22(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
     arcs = [[TRIPLE_ARC[0], None], 
-            [TRIPLE_ARC[2], "mDoubleTripleArc"], 
-            [TRIPLE_ARC[4], "mTripleArc0"]]
+            [TRIPLE_ARC[2], None, "clipDoubleTripleArc"], 
+            [TRIPLE_ARC[4], None, "clipTripleArc0"]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
     return t_str 
     
 def T23(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
-    arcs = [[TRIPLE_ARC[0], "mTripleArc4"], 
-            [TRIPLE_ARC[2], "mDoubleTripleArc"], 
+    arcs = [[TRIPLE_ARC[0], None, "clipTripleArc4"], 
+            [TRIPLE_ARC[2], None, "clipDoubleTripleArc"], 
             [TRIPLE_ARC[4], None]]
     t_str = make_tile(kappa, theta, arcs, phi, stroke, stroke_width)    
     return t_str
@@ -272,6 +406,19 @@ def draw_tile(file, x_pos = 0, y_pos = 0, stroke = "black", stroke_width = 30,
     file.write("fill-opacity=\"{:.2f}\" ".format(fill_opacity)) 
     file.write("transform =\"translate({}, {})\" ".format(x_pos, y_pos))
     file.write(" />\n")
+    
+def draw_tile_str(x_pos = 0, y_pos = 0, stroke = "black", stroke_width = 30, 
+              stroke_color = "black", scale = 0.10, fill = "none", 
+              fill_opacity = 1.0): 
+    t_str = "<use xlink:href=\"#hextile\" "
+    t_str += "stroke=\"{}\" ".format(stroke)
+    t_str += "stroke-width=\"{}\" ".format(int(stroke_width))
+    t_str += "stroke-color=\"{}\" ".format(stroke_color)
+    t_str += "fill=\"{}\" ".format(fill)
+    t_str += "fill-opacity=\"{:.2f}\" ".format(fill_opacity)
+    t_str += "transform =\"translate({}, {})\" ".format(x_pos, y_pos)
+    t_str += " />\n"
+    return t_str
      
 def p_tile(m, n, fill = "none", fill_opacity = 1.0): 
     t_str = "<use xlink:href=\"#hextile\" " 
@@ -330,10 +477,16 @@ def par_coords(m, n, x_ht = dY, y_ht = dX):
 
 
 
-def svg_header(): 
+def svg_header(corona = CORONA, m = None, n = None): 
     svgheader = "<?xml version=\"1.0\"?>\n" +\
             "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +\
-            "width=\"800\" height=\"800\" viewBox=\"0 0 {0} {0}\" ".format(SVG_HT)
+            "width=\"1000\" height=\"1000\" "
+    if((m is not None) and (n is  not None)):
+        svgheader += "viewBox=\"0 0 {0} {1}\" ".format((n + 4) * dY, 
+                                                        (2 * m + 2) * dY)
+    else: 
+       svgheader += "viewBox=\"0 0 {0} {1}\" ".format((2 * corona + 2) * dX, 
+                                                        (2 * corona + 2) * dY)        
     if(ROTATE != 0): 
         svgheader += "transform=\"rotate({}, {}, {})\" ".format(ROTATE, 400, 400)
     svgheader += ">\n" +\
@@ -345,9 +498,10 @@ def svg_header():
     return svgheader
 
 
-def prep_file(file): 
-    file.write(svg_header())
+def prep_file(file, corona = CORONA, m = None, n = None): 
+    file.write(svg_header(corona = corona, m = m, n = n))
     write_mask_dfns(file) 
+    write_clip_dfns(file)
     file.write("</defs>\n\n")
 
     
@@ -547,23 +701,26 @@ def sat_par_cross(file):
     file.write(T1p(0, 1, 0))
     file.write(T1p(1, 0, 0))
 
-def blank_corona(file):     
-    file.write("<use xlink:href=\"#hextile\" x=\"" + str(ORIGIN_X) + "\" y=\"" + str(ORIGIN_Y) +\
-                  "\" fill=\"white\"  />\n")
+def blank_corona(file, opacity = 1.0, corona = CORONA):     
+#    file.write("<use xlink:href=\"#hextile\" x=\"" + str(ORIGIN_X) + "\" y=\"" + str(ORIGIN_Y) +\
+#                  "\" fill=\"white\"  />\n")
     
-    for k in range(CORONA):
-        opacity = (k + 1) / (2 * CORONA)
+    for k in range(corona):
+        if(opacity is None):
+            shade = (k + 1) / (2 * corona)
+        else: 
+            shade = opacity
         for t in range (6 * (k + 1)): 
             x_pos, y_pos = corona_coords(k + 1, t, dX, dY, ORIGIN_X, ORIGIN_Y)
-            draw_tile(file, x_pos, y_pos, fill = "none", fill_opacity = opacity)
+            draw_tile(file, x_pos, y_pos, fill = "none", fill_opacity = shade)
 
     
 #def sat_hex(file): 
     
 
 
-svgfile = open(FILENAME + ".svg", "w") 
-prep_file(svgfile)
+#svgfile = open(FILENAME + ".svg", "w") 
+#prep_file(svgfile)
 
 #blank_corona(svgfile)
 
@@ -709,6 +866,20 @@ def draw_cat1(file):
     
 #draw_cat1(svgfile)
     
+def draw_AB_clusters(file, shades = None): 
+    prep_file(file, corona = 6)
+    if(shades is not None): 
+        s_list = shades 
+    else: 
+        s_list = 4 * [(None, 1.0)] 
+    for i in range(3): 
+        file.write(draw_A_cluster(-6 + 2 * i, 4 - 4 * i, rotation = 1, 
+                                  sub = i, shading = s_list[1][0], 
+                              opacity = s_list[1][1]))
+        file.write(draw_B_cluster(-1 + 2 * i, 4 - 4 * i, rotation = 1, 
+                                   sub = i, shading = s_list[0][0], 
+                                    opacity = s_list[0][1]))                     
+    
 def draw_clusters(file): 
     draw_tile(file, *cor_axis_coords(-9, 7))
     draw_tile(file, *cor_axis_coords(-8, 7))
@@ -752,6 +923,19 @@ def draw_clusters(file):
     file.write(T1(0, -1, 0))
     file.write(T4(1, -1, 0))
     file.write(T15(1, -2, 1))
+    
+def draw_CD_clusters(): 
+    file = open("CDclusters.svg", "w") 
+    prep_file(file, corona = 4) 
+    file.write(draw_C_cluster(-2, 0, rotation = 1, 
+                   shading = SHADE_LIST[3][0], 
+                    opacity = SHADE_LIST[3][1]))
+    file.write(draw_D_cluster(1, 0, rotation = 1, 
+                   shading = SHADE_LIST[2][0], 
+                    opacity = SHADE_LIST[2][1]))
+    file.write("</svg>") 
+    file.close()
+    
     
     
 def edge_clusters(file): 
@@ -973,7 +1157,10 @@ def draw_k1_unknot(file):
     
 def stretched_coords(x, y, m = M, n = N): 
     origin_x = dX 
-    origin_y = (2 * m + 1 + (n + 1) // 2) * dY 
+    if(m > n): 
+        origin_y = (m + n) * dy
+    else: 
+        origin_y = (m) * dY 
     x_pos = origin_x + (x * 1500) 
     y_pos = origin_y - (x * Y_OFFSET) - y * dY 
     
@@ -991,8 +1178,9 @@ def T1s(x, y, phi = 6, stroke=STROKE, stroke_width = STROKEWIDTH):
     return t1_str 
     
 def T20s(kappa, theta, phi = 6, stroke = STROKE, stroke_width = STROKEWIDTH):
-    arcs = [[TRIPLE_ARC[0], "mTripleArc2"], [TRIPLE_ARC[2], "mTripleArc4"], 
-            [TRIPLE_ARC[4], "mTripleArc0"]] 
+    arcs = [[TRIPLE_ARC[0], None, "clipTripleArc2"], 
+            [TRIPLE_ARC[2], None, "clipTripleArc4"], 
+            [TRIPLE_ARC[4], None, "clipTripleArc0"]] 
     t_str = make_tile_stretched(kappa, theta, arcs, phi, stroke, stroke_width)    
     return t_str
 
@@ -1004,7 +1192,7 @@ def stretched_hexagon(file, m, n):
     else: 
         CORONA = n
     
-    prep_file(file) 
+    prep_file(file, m = m, n = n) 
 
     for i in range(m): 
         for j in range(n + i): 
@@ -1069,7 +1257,8 @@ def rot_cluster(rot):
 
         
     
-def draw_A_cluster(x, y, rotation = None, sub = 0): 
+def draw_A_cluster(x, y, rotation = None, sub = 0, color = STROKE, 
+                   shading = None, opacity = 1.0): 
     if(rotation is not None): 
         rot = rotation
     else: 
@@ -1079,22 +1268,31 @@ def draw_A_cluster(x, y, rotation = None, sub = 0):
     t4 = list(rot_cluster((rot + 3) % 6))
     
     tile_str = ""
+    if(shading is not None): 
+        tile_str += draw_tile_str(*cor_axis_coords(x, y), 
+                    fill = shading, fill_opacity = opacity)
+        tile_str += draw_tile_str(*cor_axis_coords(x + t2[0], y + t2[1]), 
+                    fill = shading, fill_opacity = opacity)
+        tile_str += draw_tile_str(*cor_axis_coords(x + t3[0], y + t3[1]), 
+                    fill = shading, fill_opacity = opacity)
+
     if(sub == 1): 
-        tile_str += T1(x, y, 2 - rot) 
-        tile_str += T1(x + t2[0], y + t2[1], 2 - rot)
-        tile_str += T16(x + t3[0], y + t3[1], 4 - rot) 
+        tile_str += T1(x, y, 2 - rot, ) 
+        tile_str += T1(x + t2[0], y + t2[1], 2 - rot, stroke = color)
+        tile_str += T16(x + t3[0], y + t3[1], 4 - rot, stroke = color) 
     elif(sub == 2): 
-        tile_str += T2(x, y, 1 - rot) 
-        tile_str += T2(x + t2[0], y + t2[1], 2 - rot)
-        tile_str += T4(x + t3[0], y + t3[1], 1 - rot) 
+        tile_str += T2(x, y, 1 - rot, stroke = color) 
+        tile_str += T2(x + t2[0], y + t2[1], 2 - rot, stroke = color)
+        tile_str += T4(x + t3[0], y + t3[1], 1 - rot, stroke = color) 
     else:
-        tile_str += T1(x, y, 2 - rot) 
-        tile_str += T1(x + t2[0], y + t2[1], 2 - rot)
-        tile_str += T19(x + t3[0], y + t3[1], 5 - rot) 
-    tile_str += T1(x + t3[0] + t4[0], y + t3[1] + t4[1], 0 - rot)
+        tile_str += T1(x, y, 2 - rot, stroke = color) 
+        tile_str += T1(x + t2[0], y + t2[1], 2 - rot, stroke = color)
+        tile_str += T19(x + t3[0], y + t3[1], 5 - rot, stroke = color) 
+    tile_str += T1(x + t3[0] + t4[0], y + t3[1] + t4[1], 0 - rot, stroke = color)
     return tile_str
     
-def draw_B_cluster(x, y, rotation = None, sub = 0):
+def draw_B_cluster(x, y, rotation = None, sub = 0, color = STROKE, 
+                   shading = None, opacity = 1.0): 
     if(rotation is not None): 
         rot = rotation
     else: 
@@ -1103,22 +1301,30 @@ def draw_B_cluster(x, y, rotation = None, sub = 0):
     t3 = list(rot_cluster((rot + 3) % 6))  
     
     tile_str = "" 
+    if(shading is not None): 
+        tile_str += draw_tile_str(*cor_axis_coords(x, y), 
+                    fill = shading, fill_opacity = opacity)
+        tile_str += draw_tile_str(*cor_axis_coords(x + t2[0], y + t2[1]), 
+                    fill = shading, fill_opacity = opacity)
+        tile_str += draw_tile_str(*cor_axis_coords(x + t3[0], y + t3[1]), 
+                    fill = shading, fill_opacity = opacity)
     if(sub == 1): 
-        tile_str += T1(x, y, 1 - rot)
-        tile_str += T4(x + t2[0], y + t2[1], 1 - rot)
-        tile_str += T16(x + t3[0], y + t3[1], 5 - rot) 
+        tile_str += T1(x, y, 1 - rot, stroke = color)
+        tile_str += T4(x + t2[0], y + t2[1], 1 - rot, stroke = color)
+        tile_str += T16(x + t3[0], y + t3[1], 5 - rot, stroke = color) 
     elif(sub == 2): 
-        tile_str += T1(x, y, 1 - rot)
-        tile_str += T4(x + t2[0], y + t2[1], 1 - rot)
-        tile_str += T15(x + t3[0], y + t3[1], 0 - rot) 
+        tile_str += T1(x, y, 1 - rot, stroke = color)
+        tile_str += T4(x + t2[0], y + t2[1], 1 - rot, stroke = color)
+        tile_str += T15(x + t3[0], y + t3[1], 0 - rot, stroke = color) 
     else: 
-        tile_str += T1(x, y, 1 - rot)
-        tile_str += T4(x + t2[0], y + t2[1], 1 - rot)
-        tile_str += T19(x + t3[0], y + t3[1], 0 - rot) 
+        tile_str += T1(x, y, 1 - rot, stroke = color)
+        tile_str += T4(x + t2[0], y + t2[1], 1 - rot, stroke = color)
+        tile_str += T19(x + t3[0], y + t3[1], 0 - rot, stroke = color) 
     
     return tile_str
     
-def draw_C_cluster(x, y, rotation = None): 
+def draw_C_cluster(x, y, rotation = None, color = STROKE, 
+                   shading = None, opacity = 1.0): 
     if(rotation is not None): 
         rot = rotation
     else: 
@@ -1127,13 +1333,21 @@ def draw_C_cluster(x, y, rotation = None):
     t3 = list(rot_cluster((rot + 3) % 6))  
     
     t_str = "" 
-    t_str += T1(x, y, 2 - rot) 
-    t_str += T19(x + t2[0], y + t2[1], 3 - rot) 
-    t_str += T4(x + t2[0] + t3[0], y + t2[1] + t3[1], 4 - rot)
+    if(shading is not None): 
+        t_str += draw_tile_str(*cor_axis_coords(x, y), 
+                    fill = shading, fill_opacity = opacity)
+        t_str += draw_tile_str(*cor_axis_coords(x + t2[0], y + t2[1]), 
+                    fill = shading, fill_opacity = opacity)
+        t_str += draw_tile_str(*cor_axis_coords(x + t2[0] + t3[0], y + t2[1] + t3[1]), 
+                    fill = shading, fill_opacity = opacity)
+    t_str += T1(x, y, 2 - rot, stroke = color) 
+    t_str += T19(x + t2[0], y + t2[1], 3 - rot, stroke = color) 
+    t_str += T4(x + t2[0] + t3[0], y + t2[1] + t3[1], 4 - rot, stroke = color)
     
     return t_str
 
-def draw_D_cluster(x, y, rotation = None): 
+def draw_D_cluster(x, y, rotation = None, color = STROKE,
+                   shading = None, opacity = 1.0): 
     if(rotation is not None): 
         rot = rotation
     else: 
@@ -1142,13 +1356,21 @@ def draw_D_cluster(x, y, rotation = None):
     t3 = list(rot_cluster((rot + 3) % 6))  
     
     t_str = "" 
-    t_str += T4(x, y, 1 - rot) 
-    t_str += T19(x + t2[0], y + t2[1], 0 - rot) 
-    t_str += T1(x + t2[0] + t3[0], y + t2[1] + t3[1], 5 - rot)
+    if(shading is not None): 
+        t_str += draw_tile_str(*cor_axis_coords(x, y), 
+                    fill = shading, fill_opacity = opacity)
+        t_str += draw_tile_str(*cor_axis_coords(x + t2[0], y + t2[1]), 
+                    fill = shading, fill_opacity = opacity)
+        t_str += draw_tile_str(*cor_axis_coords(x + t2[0] + t3[0], y + t2[1] + t3[1]), 
+                    fill = shading, fill_opacity = opacity)
+    t_str += T4(x, y, 1 - rot, stroke = color) 
+    t_str += T19(x + t2[0], y + t2[1], 0 - rot, stroke = color) 
+    t_str += T1(x + t2[0] + t3[0], y + t2[1] + t3[1], 5 - rot, stroke = color)
     
     return t_str 
     
-def draw_X_over(x, y, rotation = None): 
+def draw_X_over(x, y, rotation = None, color = STROKE, 
+                   shading = None, opacity = 1.0): 
     if(rotation is not None): 
         rot = rotation
     else: 
@@ -1160,69 +1382,138 @@ def draw_X_over(x, y, rotation = None):
     ty = list(rot_cluster((rot + 4) % 6)) 
     
     t_str = "" 
-    t_str += T1(x, y, 2 - rot)
-    t_str += T4(x + t01[0], y + t01[1], 0 - rot)
+    if(shading is not None): 
+        t_str += draw_tile_str(*cor_axis_coords(x, y), 
+                    fill = shading, fill_opacity = opacity)
+        t_str += draw_tile_str(*cor_axis_coords(x + t01[0], y + t01[1]), 
+                    fill = shading, fill_opacity = opacity)
+        t_str += draw_tile_str(*cor_axis_coords(x + t10[0], y + t10[1]), 
+                    fill = shading, fill_opacity = opacity)
+
+    t_str += T1(x, y, 2 - rot, stroke = color)
+    t_str += T4(x + t01[0], y + t01[1], 0 - rot, stroke = color)
     
-    t_str += T1(x + t10[0], y + t10[1], 2 - rot)
-    t_str += T19(x + t11[0], y + t11[1], 5 - rot)
-    t_str += T19(x + t11[0] + tx[0], y + t11[1] + tx[1], 5 - rot)
+    t_str += T1(x + t10[0], y + t10[1], 2 - rot, stroke = color)
+    t_str += T19(x + t11[0], y + t11[1], 5 - rot, stroke = color)
+    t_str += T19(x + t11[0] + tx[0], y + t11[1] + tx[1], 5 - rot, stroke = color)
     
-    t_str += T1(x + (2 * ty[0]), y + (2 * ty[1]), 2 - rot)
-    t_str += T17(x + tx[0] + (2 * ty[0]), y + tx[1] + (2 * ty[1]), 1 - rot)
+    t_str += T1(x + (2 * ty[0]), y + (2 * ty[1]), 2 - rot, stroke = color)
+    t_str += T17(x + tx[0] + (2 * ty[0]), y + tx[1] + (2 * ty[1]), 1 - rot, stroke = color)
     t_str += T14(x + (2 * tx[0]) + (2 * ty[0]), 
-                 y + (2 * tx[1]) + (2 * ty[1]), 1 - rot)
+                 y + (2 * tx[1]) + (2 * ty[1]), 1 - rot, stroke = color)
     
-    t_str += T1(x + (3 * ty[0]), y + (3 * ty[1]), 2 - rot) 
+    t_str += T1(x + (3 * ty[0]), y + (3 * ty[1]), 2 - rot, stroke = color) 
     t_str += T19(x + tx[0] + (3 * ty[0]), 
-                 y + tx[1] + (3 * ty[1]), 5 - rot)
+                 y + tx[1] + (3 * ty[1]), 5 - rot, stroke = color)
     t_str += T23(x + (2 * tx[0]) + (3 * ty[0]), 
-                 y + (2 * tx[1]) + (3 * ty[1]), 1 - rot)
+                 y + (2 * tx[1]) + (3 * ty[1]), 1 - rot, stroke = color)
     t_str += T23(x + (3 * tx[0]) + (3 * ty[0]), 
-                 y + (3 * tx[1]) + (3 * ty[1]), 3 - rot)
+                 y + (3 * tx[1]) + (3 * ty[1]), 3 - rot, stroke = color)
     t_str += T4(x + (2 * tx[0]) + (4 * ty[0]), 
-                y + (2 * tx[1]) + (4 * ty[1]), 4 - rot)
+                y + (2 * tx[1]) + (4 * ty[1]), 4 - rot, stroke = color)
     t_str += T4(x + (4 * tx[0]) + (4 * ty[0]), 
-                y + (4 * tx[1]) + (4 * ty[1]), 4 - rot)    
+                y + (4 * tx[1]) + (4 * ty[1]), 4 - rot, stroke = color)    
     print("crap")
     return t_str
     
     
 
     
-def draw_torus(file, corona = CORONA, loop = None): 
-    file.write(draw_B_cluster(-corona, corona)) 
-    file.write(draw_B_cluster(0, -corona))
-    file.write(draw_B_cluster(corona, 0))
-    
-    file.write(draw_A_cluster(0, corona))
-    file.write(draw_A_cluster(-corona, 0)) 
-    file.write(draw_A_cluster(corona, -corona)) 
-    
-    for i in range(corona - 2): 
-        file.write(draw_D_cluster(-i - 1, corona))
-        file.write(draw_D_cluster(-corona + i + 1, 0 - i - 1))
-        file.write(draw_D_cluster(corona, -i - 2))
+def draw_torus(file, corona = CORONA, loop = None, color = STROKE, 
+               shade_list = None, 
+               corner_list = None, sub_list = None): 
+    if(shade_list is None): 
+        shade_list = [(None, None), (None, None), (None, None), (None, None)]
         
-        file.write(draw_C_cluster(corona - 1 - i, i + 1))
-        file.write(draw_C_cluster(-corona, i + 2)) 
-        file.write(draw_C_cluster(i + 1, -corona))
+    if(corner_list is None): 
+        corner_list = list(range(6)) 
+    if(sub_list is None): 
+        sub_list = 6 * [0]             
+
+    for i in range(corona - 2): 
+        file.write(draw_D_cluster(-i - 1, corona, color = color, 
+                                  shading = shade_list[2][0], 
+                                opacity = shade_list[2][1])) 
+        file.write(draw_D_cluster(-corona + i + 1, 0 - i - 1, color = color, 
+                                  shading = shade_list[2][0], 
+                                    opacity = shade_list[2][1])) 
+        file.write(draw_D_cluster(corona, -i - 2, color = color, 
+                              shading = shade_list[2][0], 
+                                opacity = shade_list[2][1])) 
+                             
+        file.write(draw_C_cluster(corona - 1 - i, i + 1, color = color, 
+                              shading = shade_list[3][0], 
+                                opacity = shade_list[3][1]))                                   
+        file.write(draw_C_cluster(-corona, i + 2, color = color, 
+                              shading = shade_list[3][0], 
+                                opacity = shade_list[3][1]))                                   
+        file.write(draw_C_cluster(i + 1, -corona, color = color, 
+                              shading = shade_list[3][0], 
+                                opacity = shade_list[3][1])) 
+                                  
+    for c in corner_list: 
+        if(c == 1):                 
+            file.write(draw_B_cluster(-corona, corona, color = color, 
+                                  shading = shade_list[0][0], 
+                                    opacity = shade_list[0][1], 
+                                    sub = sub_list[c])) 
+        elif(c == 3):                            
+            file.write(draw_B_cluster(0, -corona, color = color, 
+                                  shading = shade_list[0][0], 
+                                    opacity = shade_list[0][1], 
+                                    sub = sub_list[c])) 
+
+        elif(c == 5): 
+            file.write(draw_B_cluster(corona, 0, color = color, 
+                                  shading = shade_list[0][0], 
+                                    opacity = shade_list[0][1], 
+                                    sub = sub_list[c])) 
+
+        
+        elif(c == 0): 
+            file.write(draw_A_cluster(0, corona, color = color, 
+                                  shading = shade_list[1][0], 
+                                    opacity = shade_list[1][1], 
+                                    sub = sub_list[c])) 
+        elif(c == 2): 
+            file.write(draw_A_cluster(-corona, 0, color = color, 
+                                  shading = shade_list[1][0], 
+                                    opacity = shade_list[1][1], 
+                                    sub = sub_list[c])) 
+
+        elif(c == 4): 
+            file.write(draw_A_cluster(corona, -corona, color = color, 
+                                  shading = shade_list[1][0], 
+                                    opacity = shade_list[1][1], 
+                                    sub = sub_list[c])) 
+
+
+    
+
 
 #    file.write(draw_A_cluster(-CORONA, CORONA, sub = 1))
 #    file.write(draw_B_cluster(0, CORONA, sub = 2))
 #    file.write(draw_D_cluster(-1, CORONA)) 
 #    file.write(draw_D_cluster(2, 1))
 
-def draw_simple_torus(file, corona = CORONA): 
-    prep_file(file) 
-    blank_corona(file)
-    draw_torus(file, CORONA)
+def draw_simple_torus(file, corona = CORONA, shade_list = None, 
+                      corner_list = None, sub_list = None): 
+    prep_file(file, corona) 
+    blank_corona(file, corona = corona)
+    draw_torus(file, corona = corona, shade_list = shade_list, 
+               corner_list = corner_list, 
+               sub_list = sub_list)
 
-def draw_nested_torii(file, corona = CORONA): 
+def draw_nested_torii(file, corona = CORONA, colors = None, shading_l = None): 
     prep_file(file) 
-    blank_corona(file) 
-    draw_torus(file, corona) 
-    draw_torus(file, corona - 2) 
-    
+    blank_corona(file, opacity = 1.0) 
+    if(colors is not None): 
+        draw_torus(file, corona, color = colors[0]) 
+        draw_torus(file, corona - 2, color = colors[1]) 
+    else: 
+        draw_torus(file, corona, shade_list = shading_l) 
+        draw_torus(file, corona - 2, shade_list = shading_l) 
+        
 
 def draw_looped_torii(file, corona = CORONA): 
     prep_file(file) 
@@ -1231,6 +1522,7 @@ def draw_looped_torii(file, corona = CORONA):
 #    draw_torus(file, corona - 2) 
     draw_outer_looped_torus(file, corona)
     draw_inner_looped_torus(file, corona)
+    file.write(draw_X_over(0, corona))
     
 def draw_outer_looped_torus(file, corona = CORONA, loop = 0): 
 #    file.write(draw_X_over(0, corona)) 
@@ -1278,7 +1570,6 @@ def draw_loop(file, corona = CORONA, loops = 2):
 
 def draw_torus_Xover(file): 
     prep_file(file)
-    file.write(draw_X_over(0, 1))
     for i in range(2): 
         draw_tile(file, *cor_axis_coords(-1 + i, 1))
     for i in range(3): 
@@ -1288,18 +1579,103 @@ def draw_torus_Xover(file):
         draw_tile(file, *cor_axis_coords(i, -2))
     for i in range(5): 
         draw_tile(file, *cor_axis_coords(i, -3))
+    file.write(draw_X_over(0, 1))
+
+def draw_k2_torus_series():  
+    for i in range(6): 
+        fname = "k2-torus-{}.svg".format(i)
+        file_i = open(fname, "w")
+    
+        draw_simple_torus(file_i, shade_list = SHADE_LIST, 
+                        corner_list = list(range(i + 1)), 
+                        sub_list = [0, 0, 1, 1, 2, 2])
+        file_i.write("</svg>\n") 
+        file_i.close()
+        
+def draw_k3_torus_series(): 
+    for i in range(7): 
+        fname = "k3-torus-{}.svg".format(i) 
+        file_i = open(fname, "w") 
+        
+        prep_file(file_i, corona = 3) 
+        blank_corona(file_i, corona = 3)
+        
+        file_i.write(draw_A_cluster(0, 3, 0, shading = SHADE_LIST[0][0], 
+                                  opacity = SHADE_LIST[0][1]))
+        file_i.write(draw_A_cluster(-3, 0, 2, 
+                                    sub = 1, 
+                                    shading = SHADE_LIST[0][0], 
+                                    opacity = SHADE_LIST[0][1]))
+        file_i.write(draw_A_cluster(3, -3, 4, sub = 2, 
+                                    shading = SHADE_LIST[0][0], 
+                                    opacity = SHADE_LIST[0][1]))
+        file_i.write(draw_B_cluster(-3, 3, 1, shading = SHADE_LIST[1][0], 
+                                    opacity = SHADE_LIST[1][1])) 
+        file_i.write(draw_B_cluster(0, -3, 3, sub = 1, 
+                                    shading = SHADE_LIST[1][0], 
+                                    opacity = SHADE_LIST[1][1])) 
+        file_i.write(draw_B_cluster(3, 0, 5, sub = 2, 
+                                    shading= SHADE_LIST[1][0], 
+                                    opacity = SHADE_LIST[1][1])) 
+        for j in range(i): 
+            if(j == 0): 
+                file_i.write(draw_D_cluster(-1, 3, shading = SHADE_LIST[2][0],
+                                                opacity = SHADE_LIST[2][1]))
+            if(j == 1): 
+                file_i.write(draw_C_cluster(-3, 2, shading = SHADE_LIST[3][0],
+                                                opacity = SHADE_LIST[3][1]))
+
+            if(j == 2): 
+                file_i.write(draw_D_cluster(-2, -1, shading = SHADE_LIST[2][0],
+                                                opacity = SHADE_LIST[2][1]))
+            if(j == 3): 
+                file_i.write(draw_C_cluster(1, -3, shading = SHADE_LIST[3][0],
+                                                opacity = SHADE_LIST[3][1]))
+            if(j == 4): 
+                file_i.write(draw_D_cluster(3, -2, shading = SHADE_LIST[2][0],
+                                                opacity = SHADE_LIST[2][1]))
+            if(j == 5): 
+                file_i.write(draw_C_cluster(2, 1, shading = SHADE_LIST[3][0],
+                                                opacity = SHADE_LIST[3][1]))
+                                    
+        file_i.write("</svg>")
+        file_i.close()
+
+def draw_nested_shaded(file, corona = CORONA, shade_l = SHADE_LIST): 
+    prep_file(file) 
+    blank_corona(file, opacity = 1.0) 
+    if(colors is not None): 
+        draw_torus(file, corona, color = colors[0]) 
+        draw_torus(file, corona - 2, color = colors[1]) 
+    else: 
+        draw_torus(file, corona) 
+        draw_torus(file, corona - 2) 
+
+    
+    
+def test(file): 
+    #prep_file(file) 
+    #draw_tile(file, *cor_axis_coords(0, 0)) 
+    draw_simple_torus(file, corona = 5, shade_list = SHADE_LIST)
+    
     
 svgfile = open(FILENAME + ".svg", "w") 
+# draw_AB_clusters(svgfile, shades = SHADE_LIST)
+#draw_simple_torus(svgfile, corona = 3, shade_list = SHADE_LIST)
 
+#draw_k1_unknot(svgfile)
+M = 2
+N = 5
+#stretched_hexagon(svgfile, M + 1, N + 1)
+#draw_looped_torii(svgfile, corona = 6)
 
-M = 8
-N = 10
-#stretched_hexagon(svgfile, M, N)
+#draw_looped_torii(svgfile, corona = 6)
 
-draw_torus_Xover(svgfile)
+draw_simple_torus(svgfile, shade_list = SHADE_LIST)
 
 svgfile.write("</svg>\n") 
 svgfile.close()
 
+#draw_k2_torus_series()
 
         
